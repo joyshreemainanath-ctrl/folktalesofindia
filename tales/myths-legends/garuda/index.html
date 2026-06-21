@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Garuda legend cycle under Myths and Legends.">
+  <title>The Legend of Garuda | Folktales of India</title>
+  <link rel="stylesheet" href="../../../../style.css">
+</head>
+<body>
+  <div class="story-orb story-orb-left" aria-hidden="true"></div><div class="story-orb story-orb-right" aria-hidden="true"></div>
+  <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" id="reading-progress-bar"></div></div>
+  <header><div id="navbar-placeholder"></div></header>
+
+  <main><div class="story-layout"><article class="story-article">
+    <header class="story-hero"><div class="story-hero-copy">
+      <p class="story-state-badge">Myths and Legends</p><h1 class="story-title">The Legend of Garuda</h1><p class="story-reading-time">Reading time: 6 to 8 min</p>
+      <div class="story-metadata" aria-label="Story metadata"><span>Cycle: Garuda (The King of Birds)</span><span>Sources: Adi Parva and Kathasaritasagar (Vetala 16)</span><span>Theme: Power, Liberation, Dharma</span></div>
+      <p class="story-introduction">Born in fierce radiance, Garuda rises from vengeance to divine guardianship, becoming an enduring emblem of disciplined strength and dharma.</p>
+    </div><figure class="story-figure story-hero-figure"><img src="../../../../images/myth-legends/garuda/Garuda_1.png" alt="Garuda soaring across the heavens"><figcaption>Garuda, the celestial eagle-deity, in mythic flight.</figcaption></figure></header>
+
+    <p>Garuda's journey begins with his mother Vinata's enslavement and expands into a cosmic arc of trials, battles, vows, and transformation.</p>
+    <p>This cycle is best read chapter by chapter, tracing his rise from wrathful force to a guardian aligned with higher order.</p>
+
+    <blockquote>
+      From fire and hunger to oath and wisdom,<br>
+      the king of birds remakes the meaning of power.
+    </blockquote>
+
+    <p>Begin with <a href="./birth.html">Chapter 1: The Birth of Garuda</a>.</p>
+    <p>Continue to <a href="./rivalry-with-nagas.html">Chapter 2</a>, <a href="./two-brothers.html">Chapter 3</a>, <a href="./mighty-feast.html">Chapter 4</a>, <a href="./quest-for-amrit.html">Chapter 5</a>, and <a href="./redemption-of-nagas.html">Chapter 6</a>.</p>
+  </article></div></main>
+
+  <footer><div id="footer-placeholder"></div></footer>
+  <script>
+    async function injectComponent(placeholderId, componentPath) { const placeholder = document.getElementById(placeholderId); if (!placeholder) return; try { const response = await fetch(componentPath); if (!response.ok) throw new Error('Failed to load component: ' + componentPath); placeholder.innerHTML = await response.text(); } catch (error) { console.error(error); } }
+    injectComponent('navbar-placeholder', '../../../../components/navbar.html'); injectComponent('footer-placeholder', '../../../../components/footer.html');
+    const progressBar = document.getElementById('reading-progress-bar'); const heroFigure = document.querySelector('.story-hero-figure');
+    function updateReadingProgress() { if (!progressBar) return; const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight; const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0; progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%'; }
+    function updateHeroMotion() { if (!heroFigure) return; const offset = Math.min(window.scrollY * 0.08, 18); heroFigure.style.transform = 'translateY(' + offset.toFixed(2) + 'px)'; }
+    function refreshStoryUI() { updateReadingProgress(); updateHeroMotion(); }
+    document.body.classList.add('story-enhanced'); refreshStoryUI(); window.addEventListener('scroll', refreshStoryUI, { passive: true }); window.addEventListener('resize', refreshStoryUI);
+  </script>
+</body>
+</html>

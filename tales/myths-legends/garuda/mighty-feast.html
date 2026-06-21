@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Garuda's Mighty Feast, Chapter 4 of the Garuda legend cycle.">
+  <title>Garuda's Mighty Feast | Folktales of India</title>
+  <link rel="stylesheet" href="../../../../style.css">
+</head>
+<body>
+  <div class="story-orb story-orb-left" aria-hidden="true"></div>
+  <div class="story-orb story-orb-right" aria-hidden="true"></div>
+  <div class="reading-progress" aria-hidden="true"><div class="reading-progress-bar" id="reading-progress-bar"></div></div>
+  <header><div id="navbar-placeholder"></div></header>
+  <main><div class="story-layout"><article class="story-article">
+    <header class="story-hero"><div class="story-hero-copy">
+      <p class="story-state-badge">Myths and Legends</p><h1 class="story-title">Garuda's Mighty Feast</h1><p class="story-reading-time">Reading time: 4 to 5 min</p>
+      <div class="story-metadata" aria-label="Story metadata"><span>Cycle: Garuda (The King of Birds)</span><span>Source: Tale of Astika - Adi Parva, Mahabharata</span><span>Theme: Hunger, Restraint, Wisdom</span></div>
+      <p class="story-introduction">Satiating an unimaginable hunger while navigating the safety of ancient, hanging sages.</p>
+    </div><figure class="story-figure story-hero-figure"><img src="../../../../images/myth-legends/garuda/Garuda_1.png" alt="Garuda crossing vast skies"><figcaption>Even in hunger, Garuda learns restraint before power.</figcaption></figure></header>
+    <!-- PLUG STORY TEXT HERE WHEN CREATING INDIVIDUAL HTML FILE -->
+    <p>Garuda's hunger was so immense that ordinary prey could not satisfy him. Yet each act of feeding became a test of judgment, not just strength.</p>
+    <p>Among his greatest trials was preserving the lives of sages while seeking sustenance, proving that force without discernment is incomplete.</p>
+    <blockquote>
+      The strong may seize, but the wise preserve;<br>
+      true power protects what it could destroy.
+    </blockquote>
+    <p>This chapter prepares Garuda for his assault on heaven and the impossible task ahead.</p>
+    <p>Return to <a href="./two-brothers.html">Chapter 3</a> or continue to <a href="./quest-for-amrit.html">Chapter 5</a>.</p>
+  </article></div></main>
+  <footer><div id="footer-placeholder"></div></footer>
+  <script>
+    async function injectComponent(placeholderId, componentPath) { const placeholder = document.getElementById(placeholderId); if (!placeholder) return; try { const response = await fetch(componentPath); if (!response.ok) throw new Error('Failed to load component: ' + componentPath); placeholder.innerHTML = await response.text(); } catch (error) { console.error(error); } }
+    injectComponent('navbar-placeholder', '../../../../components/navbar.html'); injectComponent('footer-placeholder', '../../../../components/footer.html');
+    const progressBar = document.getElementById('reading-progress-bar'); const heroFigure = document.querySelector('.story-hero-figure');
+    function updateReadingProgress() { if (!progressBar) return; const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight; const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0; progressBar.style.width = Math.min(100, Math.max(0, progress)) + '%'; }
+    function updateHeroMotion() { if (!heroFigure) return; const offset = Math.min(window.scrollY * 0.08, 18); heroFigure.style.transform = 'translateY(' + offset.toFixed(2) + 'px)'; }
+    function refreshStoryUI() { updateReadingProgress(); updateHeroMotion(); }
+    document.body.classList.add('story-enhanced'); refreshStoryUI(); window.addEventListener('scroll', refreshStoryUI, { passive: true }); window.addEventListener('resize', refreshStoryUI);
+  </script>
+</body>
+</html>

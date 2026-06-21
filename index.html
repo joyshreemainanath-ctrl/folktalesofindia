@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Indian folk tales presented in a clean, readable long-form storytelling layout.">
   <title>Folktales of India</title>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <header>
@@ -19,11 +19,6 @@
       <p class="story-introduction">
         This website is a reading-focused archive of Indian folktales. Each story page highlights the region, language roots, and cultural themes carried through oral tradition.
       </p>
-
-      <div class="home-actions" aria-label="Browse stories">
-        <a class="home-action-link" href="/stories/index.html">Browse all stories</a>
-        <a class="home-action-link" href="/stories/assam/tejeemola/index.html">Open Assam: Tejeemola</a>
-      </div>
     </section>
 
     <section class="story-article home-browse" aria-labelledby="browse-by-page-title">
@@ -34,6 +29,13 @@
           <h3>Stories Index</h3>
           <p>Use the index page to browse available stories by state and region as this collection grows.</p>
           <a href="/stories/index.html">Go to stories index</a>
+        </article>
+
+        <article class="home-browse-card">
+          <p class="story-state-badge">Myths &amp; Legends</p>
+          <h3>Garuda Legend Cycle</h3>
+          <p>Explore the Garuda chapters from birth and rivalry to amrit quest and redemption.</p>
+          <a href="/tales/myths-legends/garuda/index.html">Open Garuda hub</a>
         </article>
 
         <article class="home-browse-card">
@@ -71,8 +73,8 @@
       }
     }
 
-    injectComponent('navbar-placeholder', '/components/navbar.html');
-    injectComponent('footer-placeholder', '/components/footer.html');
+    injectComponent('navbar-placeholder', './components/navbar.html');
+    injectComponent('footer-placeholder', './components/footer.html');
   </script>
 </body>
 </html>
