@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Folktales from Assam - Stories from Northeast India.">
+  <title>Assam Stories | Folktales of India</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-placeholder"></div>
+  </header>
+
+  <main>
+    <section class="story-article home-intro">
+      <p class="story-state-badge">Northeast India</p>
+      <h1 class="story-title">Assam Stories</h1>
+      <p class="story-introduction">
+        Explore the rich oral traditions and folktales from Assam, a region with a vibrant storytelling heritage.
+      </p>
+    </section>
+
+    <section class="story-article home-browse" aria-labelledby="assam-stories-title">
+      <h2 id="assam-stories-title">Available Stories</h2>
+      <div class="home-browse-grid">
+        <article class="home-browse-card">
+          <p class="story-state-badge">Assam</p>
+          <h3>Tejeemola</h3>
+          <p>
+            A classic Assamese folktale chronicled by Lakshminath Bezbarua, centered on cruelty, endurance, and remembrance.
+          </p>
+          <a href="./tejeemola/index.html">Open story page</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script>
+    async function injectComponent(placeholderId, componentPath) {
+      const placeholder = document.getElementById(placeholderId);
+
+      if (!placeholder) {
+        return;
+      }
+
+      try {
+        const response = await fetch(componentPath);
+
+        if (!response.ok) {
+          throw new Error('Failed to load component: ' + componentPath);
+        }
+
+        placeholder.innerHTML = await response.text();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    injectComponent('navbar-placeholder', '../../components/navbar.html');
+    injectComponent('footer-placeholder', '../../components/footer.html');
+  </script>
+</body>
+</html>
