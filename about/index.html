@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn more about Folktales of India and this project.">
+  <title>About | Folktales of India</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-placeholder"></div>
+  </header>
+
+  <main>
+    <section class="story-article home-intro">
+      <p class="story-state-badge">About</p>
+      <h1 class="story-title">About This Project</h1>
+      <p class="story-introduction">
+        Folktales of India is a reading-focused archive dedicated to preserving and sharing the rich oral traditions of Indian folklore.
+      </p>
+    </section>
+
+    <section class="story-article">
+      <h2>Project Vision</h2>
+      <p>
+        This website aims to create an accessible, beautifully presented collection of Indian folktales, myths, and legends. Each story is presented in a clean, long-form layout designed for focused reading and cultural exploration.
+      </p>
+    </section>
+
+    <section class="story-article">
+      <h2>How to Explore</h2>
+      <p>
+        You can browse our collection in several ways:
+      </p>
+      <ul>
+        <li><a href="/stories/">By Story Index</a> - Browse all available tales</li>
+        <li><a href="/states/">By State & Region</a> - Explore stories organized by their geographical origins</li>
+        <li><a href="/index.html">Featured Tales</a> - Discover highlighted stories from our collection</li>
+      </ul>
+    </section>
+
+    <section class="story-article">
+      <h2>The Collection</h2>
+      <p>
+        Our archive includes folktales, myths, and legends from across India, with a focus on preserving the cultural context and regional significance of each story. As this project grows, we continue to add more tales and regions.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script>
+    async function injectComponent(placeholderId, componentPath) {
+      const placeholder = document.getElementById(placeholderId);
+
+      if (!placeholder) {
+        return;
+      }
+
+      try {
+        const response = await fetch(componentPath);
+
+        if (!response.ok) {
+          throw new Error('Failed to load component: ' + componentPath);
+        }
+
+        placeholder.innerHTML = await response.text();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    injectComponent('navbar-placeholder', '../components/navbar.html');
+    injectComponent('footer-placeholder', '../components/footer.html');
+  </script>
+</body>
+</html>

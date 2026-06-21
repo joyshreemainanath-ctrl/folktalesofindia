@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse folktales organized by state and region across India.">
+  <title>Stories by State | Folktales of India</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-placeholder"></div>
+  </header>
+
+  <main>
+    <section class="story-article home-intro">
+      <p class="story-state-badge">Regional Collection</p>
+      <h1 class="story-title">Stories by State & Region</h1>
+      <p class="story-introduction">
+        Explore folktales organized by their geographical and cultural origins across India's diverse states and regions.
+      </p>
+    </section>
+
+    <section class="story-article home-browse" aria-labelledby="state-directory-title">
+      <h2 id="state-directory-title">Regions & States</h2>
+      <div class="home-browse-grid">
+        <article class="home-browse-card">
+          <p class="story-state-badge">Northeast India</p>
+          <h3>Assam</h3>
+          <p>
+            Rich oral traditions from Assam featuring classic tales of courage and wisdom passed down through generations.
+          </p>
+          <a href="/stories/assam/">Browse Assam stories</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script>
+    async function injectComponent(placeholderId, componentPath) {
+      const placeholder = document.getElementById(placeholderId);
+
+      if (!placeholder) {
+        return;
+      }
+
+      try {
+        const response = await fetch(componentPath);
+
+        if (!response.ok) {
+          throw new Error('Failed to load component: ' + componentPath);
+        }
+
+        placeholder.innerHTML = await response.text();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    injectComponent('navbar-placeholder', '../components/navbar.html');
+    injectComponent('footer-placeholder', '../components/footer.html');
+  </script>
+</body>
+</html>
