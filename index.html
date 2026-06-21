@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Indian folk tales presented in a clean, readable long-form storytelling layout.">
+  <title>Folktales of India</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-placeholder"></div>
+  </header>
+
+  <main>
+    <article class="story-article">
+      <header>
+        <p class="story-state-badge">Rajasthan</p>
+        <h1 class="story-title">The Clever Rabbit and the Proud Lion</h1>
+        <div class="story-metadata" aria-label="Story metadata">
+          <span>Tradition: Oral folk narrative</span>
+          <span>Reading time: 6 min</span>
+          <span>Theme: Wit, Justice, Survival</span>
+        </div>
+      </header>
+
+      <p class="story-introduction">
+        Told in many forms across India, this enduring tale celebrates intelligence over brute force. In this version from Rajasthan's storytelling tradition, a small rabbit saves the forest by turning a tyrant's pride against him.
+      </p>
+
+      <figure class="story-figure">
+        <img
+          src="/assets/images/clever-rabbit-lion.svg"
+          alt="A stylized illustration of a rabbit near an old forest well while a lion looks on"
+        >
+        <figcaption>A quiet forest path, a deep well, and the moment when cleverness changes everything.</figcaption>
+      </figure>
+
+      <p>
+        Long ago, the animals of a dry forest lived in fear of a lion who hunted whenever he pleased. Each day he killed more creatures than he needed, and the woods grew silent. At last the animals gathered beneath a banyan tree and begged the lion to spare them the chaos of constant hunting.
+      </p>
+
+      <blockquote>
+        “Great king,” they said, “if you remain in your cave, we will send one animal to you each day. You will never go hungry, and no life will be wasted without measure.”
+      </blockquote>
+
+      <p>
+        The lion agreed, and for a time the forest kept its grim bargain. Then one morning the lot fell to a rabbit, small and soft-footed, who knew he could never survive by strength alone. He started late on purpose and wandered slowly to the lion's cave until the sun stood high and hot above the trees.
+      </p>
+
+      <p>
+        Furious with hunger, the lion roared when the rabbit finally arrived. The ground seemed to tremble. But the rabbit bowed low and spoke in a trembling voice, saying that he had not meant disrespect. Another lion, he explained, had stopped him on the road, claimed the forest as his own, and declared that the cave-lion was an impostor.
+      </p>
+
+      <blockquote>
+        “He would have eaten me too,” said the rabbit, “but I begged to bring your message first. He waits nearby and says he fears no rival.”
+      </blockquote>
+
+      <p>
+        Maddened by vanity, the lion demanded to be taken to this challenger at once. The rabbit led him through thorn and stone to an old well hidden among grasses. Leaning over the rim, the lion saw his own reflection darkly rippling in the water below. When he roared, the well threw the roar back at him. Convinced that an enemy mocked him from the depths, he sprang downward in rage and was lost.
+      </p>
+
+      <p>
+        The rabbit returned to the banyan tree with the news, and the forest filled again with birdsong, hoofbeats, and laughter. Since then, storytellers have repeated the lesson wherever people gather at dusk: pride makes even the mighty stumble, but a calm mind can open a path where none seems possible.
+      </p>
+    </article>
+  </main>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script>
+    async function injectComponent(placeholderId, componentPath) {
+      const placeholder = document.getElementById(placeholderId);
+
+      if (!placeholder) {
+        return;
+      }
+
+      try {
+        const response = await fetch(componentPath);
+
+        if (!response.ok) {
+          throw new Error('Failed to load component: ' + componentPath);
+        }
+
+        placeholder.innerHTML = await response.text();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    injectComponent('navbar-placeholder', '/components/navbar.html');
+    injectComponent('footer-placeholder', '/components/footer.html');
+  </script>
+</body>
+</html>
