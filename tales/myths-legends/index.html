@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse myths and legends from across India.">
+  <title>Myths and Legends | Folktales of India</title>
+  <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+  <header>
+    <div id="navbar-placeholder"></div>
+  </header>
+
+  <main>
+    <section class="story-article home-intro">
+      <p class="story-state-badge">Myths and Legends</p>
+      <h1 class="story-title">Myths and Legends Collection</h1>
+      <p class="story-introduction">
+        Explore mythic cycles, legendary beings, and sacred storytelling traditions from across India.
+      </p>
+    </section>
+
+    <section class="story-article home-browse" aria-labelledby="myths-legends-title">
+      <h2 id="myths-legends-title">Available Myth Cycles</h2>
+      <div class="home-browse-grid">
+        <article class="home-browse-card">
+          <p class="story-state-badge">Myths &amp; Legends</p>
+          <h3>Garuda Legend Cycle</h3>
+          <p>
+            Follow Garuda's journey from birth and rivalry through trials, amrit quest, and redemption.
+          </p>
+          <a href="/tales/myths-legends/garuda/index.html">Open Garuda hub</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script>
+    async function injectComponent(placeholderId, componentPath) {
+      const placeholder = document.getElementById(placeholderId);
+
+      if (!placeholder) {
+        return;
+      }
+
+      try {
+        const response = await fetch(componentPath);
+
+        if (!response.ok) {
+          throw new Error('Failed to load component: ' + componentPath);
+        }
+
+        placeholder.innerHTML = await response.text();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    injectComponent('navbar-placeholder', '../../components/navbar.html');
+    injectComponent('footer-placeholder', '../../components/footer.html');
+  </script>
+</body>
+</html>
